@@ -11,4 +11,6 @@ S /Users/lsw/work/rn-rml-1/node_modules/reason-expo/lib/ocaml
 B /Users/lsw/work/rn-rml-1/node_modules/reason-expo/lib/ocaml
 S src
 B lib/bs/src
+S src/components
+B lib/bs/src/components
 ####BSB GENERATED: NO EDIT}

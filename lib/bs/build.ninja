@@ -7,20 +7,24 @@ bsc_flags =
 ppx_flags = 
 g_dpkg_incls = 
 g_ns = 
-g_lib_incls = -I src -I /Users/lsw/work/rn-rml-1/node_modules/reason-react/lib/ocaml -I /Users/lsw/work/rn-rml-1/node_modules/reason-react-native/lib/ocaml -I /Users/lsw/work/rn-rml-1/node_modules/reason-expo/lib/ocaml
+g_lib_incls = -I src/components -I src -I /Users/lsw/work/rn-rml-1/node_modules/reason-react/lib/ocaml -I /Users/lsw/work/rn-rml-1/node_modules/reason-react-native/lib/ocaml -I /Users/lsw/work/rn-rml-1/node_modules/reason-expo/lib/ocaml
 rule build_ast_from_re
   command = $bsc  $warnings -bs-jsx 3 $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
   description = [34mBuilding[39m [2m${out}[22m
-build  src/App.reast : build_ast_from_re $src_root_dir/src/App.re
+build  src/App.resast : build_ast_from_re $src_root_dir/src/App.res
 rule mk_deps
-  command = $bsdep -hash 3222f42abd73215b0bf5b80a2900245f $g_ns $in
+  command = $bsdep -hash 411768b37e4b45efe32b9b7efeea1fc8 $g_ns $in
   restat = 1
   description = [34mBuilding[39m [2m${out}[22m
-build  src/App.d : mk_deps src/App.reast
+build  src/App.d : mk_deps src/App.resast
 rule ml_cmj_cmi
   command = $bsc $g_pkg_flg -bs-suffix $g_lib_incls $warnings $bsc_flags -o $out $in
   dyndep = $in_e.d
   restat = 1
   description = [34mBuilding[39m [2m${out}[22m
-build  src/App.cmj |  src/App.cmi $src_root_dir/src/App.bs.js : ml_cmj_cmi src/App.reast ||  src/App.d
+build  src/App.cmj |  src/App.cmi $src_root_dir/src/App.bs.js : ml_cmj_cmi src/App.resast ||  src/App.d
   g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src
+build  src/components/Toucher.resast : build_ast_from_re $src_root_dir/src/components/Toucher.res
+build  src/components/Toucher.d : mk_deps src/components/Toucher.resast
+build  src/components/Toucher.cmj |  src/components/Toucher.cmi $src_root_dir/src/components/Toucher.bs.js : ml_cmj_cmi src/components/Toucher.resast ||  src/components/Toucher.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src/components
