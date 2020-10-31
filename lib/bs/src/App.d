@@ -1,1 +1,1 @@
-src/App.cmj :  src/components/Toucher.cmj src/components/Toucher.cmi
+src/App.cmj :  src/RootNavigation.cmj src/RootNavigation.cmi
