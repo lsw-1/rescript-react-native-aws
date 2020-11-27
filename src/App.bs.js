@@ -4,19 +4,8 @@ import * as React from "react";
 import * as ReactNative from "react-native";
 import * as RootNavigation from "./RootNavigation.bs.js";
 
-var styles = ReactNative.StyleSheet.create({
-      container: {
-        alignItems: "center",
-        flex: 1,
-        justifyContent: "center"
-      }
-    });
-
 function App(Props) {
-  return React.createElement(ReactNative.View, {
-              style: styles.container,
-              children: null
-            }, React.createElement(ReactNative.StatusBar, {
+  return React.createElement(React.Fragment, undefined, React.createElement(ReactNative.StatusBar, {
                   barStyle: "light-content"
                 }), React.createElement(RootNavigation.RootStack.make, {}));
 }
@@ -24,8 +13,7 @@ function App(Props) {
 var make = App;
 
 export {
-  styles ,
   make ,
   
 }
-/* styles Not a pure module */
+/* react Not a pure module */

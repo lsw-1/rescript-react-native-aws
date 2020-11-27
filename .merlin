@@ -13,4 +13,8 @@ S /Users/lsw/dev/rn-rml-1/node_modules/reason-react-navigation/lib/ocaml
 B /Users/lsw/dev/rn-rml-1/node_modules/reason-react-navigation/lib/ocaml
 S src
 B lib/bs/src
+S src/components
+B lib/bs/src/components
+S src/screens
+B lib/bs/src/screens
 ####BSB GENERATED: NO EDIT}

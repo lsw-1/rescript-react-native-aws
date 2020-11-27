@@ -1,34 +1,28 @@
-g_pkg_flg = -bs-package-name expo-template-rescript
-src_root_dir = /Users/lsw/dev/rn-rml-1
-bsc = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsc.exe
-bsdep = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsb_helper.exe
-warnings = 
-bsc_flags = 
-ppx_flags = 
-g_dpkg_incls = 
-g_ns = 
-g_lib_incls = -I src -I /Users/lsw/dev/rn-rml-1/node_modules/reason-react/lib/ocaml -I /Users/lsw/dev/rn-rml-1/node_modules/reason-react-native/lib/ocaml -I /Users/lsw/dev/rn-rml-1/node_modules/reason-expo/lib/ocaml -I /Users/lsw/dev/rn-rml-1/node_modules/reason-react-navigation/lib/ocaml
-rule build_ast_from_re
-  command = $bsc  $warnings -bs-jsx 3 $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
-
-build  src/App.resast : build_ast_from_re $src_root_dir/src/App.res
-rule mk_deps
-  command = $bsdep -hash cf7d599820c90aeb9add9b2c6e3eced1 $g_ns $in
+g_root = /Users/lsw/dev/rn-rml-1
+rule astj
+  command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsc.exe  -bs-v 8.3.3 -bs-jsx 3  -bs-ast -o $out $i
+o src/App.ast : astj $g_root/src/App.re
+rule deps
+  command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsb_helper.exe -hash 6642cf5fec501f4bb54ca3d1297c5d4a $in
   restat = 1
-
-build  src/App.d : mk_deps src/App.resast
-rule ml_cmj_cmi
-  command = $bsc $g_pkg_flg $g_lib_incls $warnings $bsc_flags -o $out $in
-  dyndep = $in_e.d
+o src/App.d : deps src/App.ast
+rule mij
+  command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsc.exe -I src/screens -I src/components -I src -I /Users/lsw/dev/rn-rml-1/node_modules/reason-react/lib/ocaml -I /Users/lsw/dev/rn-rml-1/node_modules/reason-react-native/lib/ocaml -I /Users/lsw/dev/rn-rml-1/node_modules/reason-expo/lib/ocaml -I /Users/lsw/dev/rn-rml-1/node_modules/reason-react-navigation/lib/ocaml   -bs-package-name expo-template-rescript -bs-package-output es6:$in_d:.bs.js -o $out $i
+  dyndep = 1
   restat = 1
-
-build  src/App.cmj |  src/App.cmi ../../src/App.bs.js : ml_cmj_cmi src/App.resast ||  src/App.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src:.bs.js
-build  src/WelcomeScreen.resast : build_ast_from_re $src_root_dir/src/WelcomeScreen.res
-build  src/WelcomeScreen.d : mk_deps src/WelcomeScreen.resast
-build  src/WelcomeScreen.cmj |  src/WelcomeScreen.cmi ../../src/WelcomeScreen.bs.js : ml_cmj_cmi src/WelcomeScreen.resast ||  src/WelcomeScreen.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src:.bs.js
-build  src/RootNavigation.resast : build_ast_from_re $src_root_dir/src/RootNavigation.res
-build  src/RootNavigation.d : mk_deps src/RootNavigation.resast
-build  src/RootNavigation.cmj |  src/RootNavigation.cmi ../../src/RootNavigation.bs.js : ml_cmj_cmi src/RootNavigation.resast ||  src/RootNavigation.d
-  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src:.bs.js
+o src/App.cmj src/App.cmi ../../src/App.bs.js : mij src/App.ast
+o src/SharedStyles.ast : astj $g_root/src/SharedStyles.re
+o src/SharedStyles.d : deps src/SharedStyles.ast
+o src/SharedStyles.cmj src/SharedStyles.cmi ../../src/SharedStyles.bs.js : mij src/SharedStyles.ast
+o src/RootNavigation.ast : astj $g_root/src/RootNavigation.re
+o src/RootNavigation.d : deps src/RootNavigation.ast
+o src/RootNavigation.cmj src/RootNavigation.cmi ../../src/RootNavigation.bs.js : mij src/RootNavigation.ast
+o src/components/MainButton.ast : astj $g_root/src/components/MainButton.re
+o src/components/MainButton.d : deps src/components/MainButton.ast
+o src/components/MainButton.cmj src/components/MainButton.cmi ../../src/components/MainButton.bs.js : mij src/components/MainButton.ast
+o src/screens/MainScreen.ast : astj $g_root/src/screens/MainScreen.re
+o src/screens/MainScreen.d : deps src/screens/MainScreen.ast
+o src/screens/MainScreen.cmj src/screens/MainScreen.cmi ../../src/screens/MainScreen.bs.js : mij src/screens/MainScreen.ast
+o src/screens/WelcomeScreen.ast : astj $g_root/src/screens/WelcomeScreen.re
+o src/screens/WelcomeScreen.d : deps src/screens/WelcomeScreen.ast
+o src/screens/WelcomeScreen.cmj src/screens/WelcomeScreen.cmi ../../src/screens/WelcomeScreen.bs.js : mij src/screens/WelcomeScreen.ast
