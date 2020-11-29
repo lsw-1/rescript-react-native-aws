@@ -5,7 +5,8 @@ import * as ReactNative from "react-native";
 var styles = ReactNative.StyleSheet.create({
       container: {
         backgroundColor: "#242533",
-        flex: 1
+        flex: 1,
+        paddingHorizontal: String(16)
       },
       containerCenter: {
         alignItems: "center",
@@ -39,8 +40,15 @@ var colors = {
   body: "#FFFFFF"
 };
 
+var spacing = {
+  small: 4,
+  medium: 8,
+  large: 16
+};
+
 export {
   colors ,
+  spacing ,
   styles ,
   
 }

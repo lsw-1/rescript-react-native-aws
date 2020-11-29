@@ -6,14 +6,6 @@ import * as SharedStyles from "../SharedStyles.bs.js";
 import * as ReactNative from "react-native";
 
 var styles = ReactNative.StyleSheet.create({
-      gradient: {
-        flex: 1
-      },
-      container: {
-        alignItems: "center",
-        flex: 1,
-        justifyContent: "center"
-      },
       text: {
         color: "#eee",
         fontSize: 22,
@@ -22,6 +14,7 @@ var styles = ReactNative.StyleSheet.create({
     });
 
 function WelcomeScreen(Props) {
+  var navigation = Props.navigation;
   return React.createElement(ReactNative.View, {
               style: SharedStyles.styles.container,
               children: null
@@ -30,6 +23,7 @@ function WelcomeScreen(Props) {
                   children: "Great things here"
                 }), React.createElement(MainButton.make, {
                   onPress: (function (param) {
+                      navigation.navigate("authorized");
                       
                     }),
                   text: "Hej"

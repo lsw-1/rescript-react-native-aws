@@ -1,1 +1,1 @@
-src/App.cmj :  src/RootNavigation.cmj src/RootNavigation.cmi
+src/App.cmj :  src/Root.cmj src/Root.cmi

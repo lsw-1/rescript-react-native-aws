@@ -1,1 +1,154 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@ludwigSW 
+MoOx
+/
+LifeTime
+1
+152
+Code
+Issues
+16
+Pull requests
+Actions
+Security
+Insights
+LifeTime/.gitignore
+@MoOx
+MoOx Update .gitignore
+Latest commit 7d761f5 on 3 Aug
+ History
+ 1 contributor
+113 lines (91 sloc)  1.44 KB
+  
+## React Native
+
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# node.js
+#
 node_modules/
+npm-debug.log
+yarn-error.log
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+
+# Bundle artifact
+*.jsbundle
+
+# CocoaPods
+/ios/Pods/
+
+## React Web
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Custom
+
+# Ocaml / Reason / BuckleScript artifacts
+*.bs.js
+.bsb.lock
+**/lib/bs
+**/lib/ocaml
+**/.merlin
+
+# react-from-svg artifacts
+src/SVGs/components
+
+# markdown-to-json compiled json
+src/md/*.json
+
+# sensitive information
+sentry.properties
+fastlane/AppFile
+fastlane/MatchFile
+
+# useless
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# iOS Build artifacts (fastlane)
+*.app.dSYM.zip
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

@@ -1,73 +1,14 @@
-#Start(1606465517678)
-
-  Warning number 33
-  /Users/lsw/dev/rn-rml-1/src/screens/WelcomeScreen.re:2:1-20
-  
-  1 │ open ReactNative;
-  2 │ open ReactNavigation;
-  3 │ 
-  4 │ let styles = {
-  
-  unused open ReactNavigation.
-  
+#Start(1606644446717)
 
   Warning number 27
-  /Users/lsw/dev/rn-rml-1/src/screens/WelcomeScreen.re:16:14-23
+  /Users/lsw/dev/rn-rml-1/src/Root.res:6:18-24
   
-  14 │ 
-  15 │ [@react.component]
-  16 │ let make = (~navigation, ~route) => {
-  17 │   <View style={SharedStyles.styles##container}>
-  18 │     <Text style={SharedStyles.styles##title}>
-  
-  unused variable navigation.
-  
-
-  Warning number 27
-  /Users/lsw/dev/rn-rml-1/src/screens/WelcomeScreen.re:16:27-31
-  
-  14 │ 
-  15 │ [@react.component]
-  16 │ let make = (~navigation, ~route) => {
-  17 │   <View style={SharedStyles.styles##container}>
-  18 │     <Text style={SharedStyles.styles##title}>
-  
-  unused variable route.
-  
-
-  Warning number 27
-  /Users/lsw/dev/rn-rml-1/src/screens/MainScreen.re:15:14-23
-  
-  13 │ 
-  14 │ [@react.component]
-  15 │ let make = (~navigation, ~route) => {
-  16 │   <Expo.LinearGradient
-  17 │     colors=[|SharedStyles.colors.main, SharedStyles.colors.secondary|]
-  
-  unused variable navigation.
-  
-
-  Warning number 27
-  /Users/lsw/dev/rn-rml-1/src/screens/MainScreen.re:15:27-31
-  
-  13 │ 
-  14 │ [@react.component]
-  15 │ let make = (~navigation, ~route) => {
-  16 │   <Expo.LinearGradient
-  17 │     colors=[|SharedStyles.colors.main, SharedStyles.colors.secondary|]
-  
-  unused variable route.
-  
-
-  Warning number 27
-  /Users/lsw/dev/rn-rml-1/src/RootNavigation.re:10:18-24
-  
-   8 ┆ [@react.component]
-   9 ┆ let make = () => {
-  10 ┆   let (isAuth, setAuth) = React.useState(() => false);
-  11 ┆ 
-  12 ┆   <Native.NavigationContainer>
+  4 ┆ @react.component
+  5 ┆ let make = () => {
+  6 ┆   let (isAuth, setAuth) = React.useState(() => false)
+  7 ┆ 
+  8 ┆   React.useEffect0(() => {
   
   unused variable setAuth.
   
-#Done(1606465517755)
+#Done(1606644446741)

@@ -1,10 +1,11 @@
-6
+7
 App
+Root
 MainButton
 MainScreen
+Navigators
 SharedStyles
 WelcomeScreen
-RootNavigation
 src	src/components	src/screens	
-1
+1
 0

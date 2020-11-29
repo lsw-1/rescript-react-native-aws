@@ -1,9 +1,9 @@
 g_root = /Users/lsw/dev/rn-rml-1
 rule astj
   command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsc.exe  -bs-v 8.3.3 -bs-jsx 3  -bs-ast -o $out $i
-o src/App.ast : astj $g_root/src/App.re
+o src/App.ast : astj $g_root/src/App.res
 rule deps
-  command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsb_helper.exe -hash 6642cf5fec501f4bb54ca3d1297c5d4a $in
+  command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsb_helper.exe -hash cc99c5987677c4625e57f847806a6ab6 $in
   restat = 1
 o src/App.d : deps src/App.ast
 rule mij
@@ -11,18 +11,21 @@ rule mij
   dyndep = 1
   restat = 1
 o src/App.cmj src/App.cmi ../../src/App.bs.js : mij src/App.ast
-o src/SharedStyles.ast : astj $g_root/src/SharedStyles.re
+o src/Root.ast : astj $g_root/src/Root.res
+o src/Root.d : deps src/Root.ast
+o src/Root.cmj src/Root.cmi ../../src/Root.bs.js : mij src/Root.ast
+o src/Navigators.ast : astj $g_root/src/Navigators.res
+o src/Navigators.d : deps src/Navigators.ast
+o src/Navigators.cmj src/Navigators.cmi ../../src/Navigators.bs.js : mij src/Navigators.ast
+o src/SharedStyles.ast : astj $g_root/src/SharedStyles.res
 o src/SharedStyles.d : deps src/SharedStyles.ast
 o src/SharedStyles.cmj src/SharedStyles.cmi ../../src/SharedStyles.bs.js : mij src/SharedStyles.ast
-o src/RootNavigation.ast : astj $g_root/src/RootNavigation.re
-o src/RootNavigation.d : deps src/RootNavigation.ast
-o src/RootNavigation.cmj src/RootNavigation.cmi ../../src/RootNavigation.bs.js : mij src/RootNavigation.ast
-o src/components/MainButton.ast : astj $g_root/src/components/MainButton.re
+o src/components/MainButton.ast : astj $g_root/src/components/MainButton.res
 o src/components/MainButton.d : deps src/components/MainButton.ast
 o src/components/MainButton.cmj src/components/MainButton.cmi ../../src/components/MainButton.bs.js : mij src/components/MainButton.ast
-o src/screens/MainScreen.ast : astj $g_root/src/screens/MainScreen.re
+o src/screens/MainScreen.ast : astj $g_root/src/screens/MainScreen.res
 o src/screens/MainScreen.d : deps src/screens/MainScreen.ast
 o src/screens/MainScreen.cmj src/screens/MainScreen.cmi ../../src/screens/MainScreen.bs.js : mij src/screens/MainScreen.ast
-o src/screens/WelcomeScreen.ast : astj $g_root/src/screens/WelcomeScreen.re
+o src/screens/WelcomeScreen.ast : astj $g_root/src/screens/WelcomeScreen.res
 o src/screens/WelcomeScreen.d : deps src/screens/WelcomeScreen.ast
 o src/screens/WelcomeScreen.cmj src/screens/WelcomeScreen.cmi ../../src/screens/WelcomeScreen.bs.js : mij src/screens/WelcomeScreen.ast
