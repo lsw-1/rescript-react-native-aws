@@ -1,14 +1,14 @@
-#Start(1606644446717)
+#Start(1606679635251)
 
   Warning number 27
-  /Users/lsw/dev/rn-rml-1/src/Root.res:6:18-24
+  /Users/lsw/dev/rn-rml-1/src/RootContext.res:7:17-19
   
-  4 ┆ @react.component
-  5 ┆ let make = () => {
-  6 ┆   let (isAuth, setAuth) = React.useState(() => false)
-  7 ┆ 
-  8 ┆   React.useEffect0(() => {
+  5 │   authorized: false,
+  6 │   darkMode: false,
+  7 │   setAuthorize: val => (),
+  8 │ }
+  9 │ 
   
-  unused variable setAuth.
+  unused variable val.
   
-#Done(1606644446741)
+#Done(1606679635276)

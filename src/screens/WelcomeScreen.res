@@ -1,21 +1,18 @@
 open ReactNative
 
-let styles = {
-  open Style
-  StyleSheet.create({
-    "text": style(~fontSize=22., ~color="#eee", ~fontWeight=#_500, ()),
-  })
-}
-
 @react.component
-let make = (~navigation, ~route as _) =>
+let make = (~navigation as _, ~route as _) => {
+  let {setAuthorize} = React.useContext(RootContext.context)
+
   <View style={SharedStyles.styles["container"]}>
+    <Spacer size={Spacer.Size(SharedStyles.XXLarge)} />
     <Text style={SharedStyles.styles["title"]}> {"Great things here"->React.string} </Text>
+    <Spacer size={Spacer.Auto} />
     <MainButton
-      text="Hej"
+      text="Log in with Apple ID"
       onPress={_ => {
-        navigation->Navigators.RootStack.Navigation.navigate("authorized")
-        ()
+        setAuthorize(true)
       }}
     />
   </View>
+}

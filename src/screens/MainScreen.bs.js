@@ -11,7 +11,7 @@ var styles = ReactNative.StyleSheet.create({
       },
       container: {
         alignItems: "center",
-        flex: 1,
+        height: 100,
         justifyContent: "center"
       },
       text: {
@@ -37,10 +37,13 @@ function MainScreen(Props) {
                 0.0
               ],
               children: React.createElement(ReactNative.View, {
-                    style: styles.container,
+                    style: ReactNative.StyleSheet.flatten([
+                          SharedStyles.styles.container,
+                          styles.container
+                        ]),
                     children: React.createElement(ReactNative.Text, {
-                          style: styles.text,
-                          children: "Hej"
+                          style: SharedStyles.styles.title,
+                          children: "Welcome to the first page"
                         })
                   })
             });

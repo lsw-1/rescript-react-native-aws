@@ -20,15 +20,13 @@ let colors = {
   body: "#FFFFFF",
 }
 
-type spacing = {
-  small: int,
-  medium: int,
-  large: int,
-}
+type sizing = Small | Medium | Large | XLarge | XXLarge
 let spacing = {
-  small: 4,
-  medium: 8,
-  large: 16,
+  "s": 4.,
+  "m": 8.,
+  "l": 16.,
+  "xl": 24.,
+  "xxl": 36.,
 }
 
 let styles = {
@@ -37,7 +35,7 @@ let styles = {
     "container": style(
       ~flex=1.,
       ~backgroundColor=colors.bg,
-      ~paddingHorizontal=spacing.large->Belt.Int.toString,
+      ~paddingHorizontal=spacing["l"]->dp,
       (),
     ),
     "containerCenter": style(~flex=1., ~alignItems=#center, ~justifyContent=#center, ()),

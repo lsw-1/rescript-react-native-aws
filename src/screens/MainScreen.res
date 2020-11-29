@@ -4,7 +4,7 @@ let styles = {
   open Style
   StyleSheet.create({
     "gradient": style(~flex=1., ()),
-    "container": style(~flex=1., ~justifyContent=#center, ~alignItems=#center, ()),
+    "container": style(~height=100.->dp, ~justifyContent=#center, ~alignItems=#center, ()),
     "text": style(~fontSize=22., ~color="#eee", ~fontWeight=#_500, ()),
   })
 }
@@ -16,7 +16,9 @@ let make = (~navigation as _, ~route as _) =>
     start=[0.0, 1.0]
     _end=[1.0, 0.0]
     style={styles["gradient"]}>
-    <View style={styles["container"]}>
-      <Text style={styles["text"]}> {"Hej"->React.string} </Text>
+    <View style={StyleSheet.flatten([SharedStyles.styles["container"], styles["container"]])}>
+      <Text style={SharedStyles.styles["title"]}>
+        {"Welcome to the first page"->React.string}
+      </Text>
     </View>
   </Expo.LinearGradient>

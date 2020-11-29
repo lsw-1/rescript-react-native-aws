@@ -3,7 +3,7 @@ rule astj
   command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsc.exe  -bs-v 8.3.3 -bs-jsx 3  -bs-ast -o $out $i
 o src/App.ast : astj $g_root/src/App.res
 rule deps
-  command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsb_helper.exe -hash cc99c5987677c4625e57f847806a6ab6 $in
+  command = /Users/lsw/dev/rn-rml-1/node_modules/bs-platform/darwin/bsb_helper.exe -hash 62ee4f0417d2126e092fd4acabc47f3e $in
   restat = 1
 o src/App.d : deps src/App.ast
 rule mij
@@ -17,9 +17,15 @@ o src/Root.cmj src/Root.cmi ../../src/Root.bs.js : mij src/Root.ast
 o src/Navigators.ast : astj $g_root/src/Navigators.res
 o src/Navigators.d : deps src/Navigators.ast
 o src/Navigators.cmj src/Navigators.cmi ../../src/Navigators.bs.js : mij src/Navigators.ast
+o src/RootContext.ast : astj $g_root/src/RootContext.res
+o src/RootContext.d : deps src/RootContext.ast
+o src/RootContext.cmj src/RootContext.cmi ../../src/RootContext.bs.js : mij src/RootContext.ast
 o src/SharedStyles.ast : astj $g_root/src/SharedStyles.res
 o src/SharedStyles.d : deps src/SharedStyles.ast
 o src/SharedStyles.cmj src/SharedStyles.cmi ../../src/SharedStyles.bs.js : mij src/SharedStyles.ast
+o src/components/Spacer.ast : astj $g_root/src/components/Spacer.res
+o src/components/Spacer.d : deps src/components/Spacer.ast
+o src/components/Spacer.cmj src/components/Spacer.cmi ../../src/components/Spacer.bs.js : mij src/components/Spacer.ast
 o src/components/MainButton.ast : astj $g_root/src/components/MainButton.res
 o src/components/MainButton.d : deps src/components/MainButton.ast
 o src/components/MainButton.cmj src/components/MainButton.cmi ../../src/components/MainButton.bs.js : mij src/components/MainButton.ast

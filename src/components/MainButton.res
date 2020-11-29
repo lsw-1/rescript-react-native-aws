@@ -3,13 +3,20 @@ open ReactNative
 let styles = {
   open Style
   StyleSheet.create({
-    "container": style(~width=100.->pct, ~height=88.->dp, ~backgroundColor="#eaa", ()),
-    "text": style(~fontSize=22., ~color="#eee", ~fontWeight=#_600, ()),
+    "container": style(
+      ~borderRadius=8.,
+      ~width=100.->pct,
+      ~height=66.->dp,
+      ~backgroundColor=SharedStyles.colors.main,
+      ~justifyContent=#center,
+      ~alignItems=#center,
+      (),
+    ),
   })
 }
 
 @react.component
 let make = (~onPress, ~text) =>
   <Pressable style={styles["container"]} onPress>
-    <Text style={styles["text"]}> {text->React.string} </Text>
+    <Text style={SharedStyles.styles["subtitle"]}> {text->React.string} </Text>
   </Pressable>

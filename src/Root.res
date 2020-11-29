@@ -1,21 +1,22 @@
 open Navigators
 
-module Nav = {
+module Navigation = {
   @react.component
   let make = () => {
-    let (isAuth, setAuth) = React.useState(() => false)
+    let {authorized} = React.useContext(RootContext.context)
 
     React.useEffect0(() => {
       Js.Console.log("Test")
       Some(() => {()})
     })
-
-    <RootStack.Navigator headerMode=#none>
-      {if isAuth {
-        <RootStack.Screen name="authorized" component=MainScreen.make />
-      } else {
-        <RootStack.Screen name="unauthorized" component=WelcomeScreen.make />
-      }}
-    </RootStack.Navigator>
+    <ReactNavigation.Native.NavigationContainer>
+      <RootStack.Navigator headerMode=#none>
+        {if authorized {
+          <RootStack.Screen name="authorized" component=MainScreen.make />
+        } else {
+          <RootStack.Screen name="unauthorized" component=WelcomeScreen.make />
+        }}
+      </RootStack.Navigator>
+    </ReactNavigation.Native.NavigationContainer>
   }
 }

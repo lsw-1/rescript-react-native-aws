@@ -2,15 +2,18 @@
 
 import * as Root from "./Root.bs.js";
 import * as React from "react";
+import * as RootContext from "./RootContext.bs.js";
+import * as SharedStyles from "./SharedStyles.bs.js";
 import * as ReactNative from "react-native";
-import * as Native from "@react-navigation/native";
 
 function App(Props) {
-  return React.createElement(React.Fragment, undefined, React.createElement(ReactNative.StatusBar, {
-                  barStyle: "light-content"
-                }), React.createElement(Native.NavigationContainer, {
-                  children: React.createElement(Root.Nav.make, {})
-                }));
+  var value = RootContext.useAppContext(undefined);
+  return React.createElement(ReactNative.SafeAreaView, {
+              style: SharedStyles.styles.container,
+              children: React.createElement(RootContext.make, RootContext.makeProps(value, null, undefined), React.createElement(ReactNative.StatusBar, {
+                        barStyle: "light-content"
+                      }), React.createElement(Root.Navigation.make, {}))
+            });
 }
 
 var make = App;

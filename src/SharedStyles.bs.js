@@ -2,11 +2,19 @@
 
 import * as ReactNative from "react-native";
 
+var spacing = {
+  s: 4,
+  m: 8,
+  l: 16,
+  xl: 24,
+  xxl: 36
+};
+
 var styles = ReactNative.StyleSheet.create({
       container: {
         backgroundColor: "#242533",
         flex: 1,
-        paddingHorizontal: String(16)
+        paddingHorizontal: spacing.l
       },
       containerCenter: {
         alignItems: "center",
@@ -38,12 +46,6 @@ var colors = {
   title: "#FFFFFF",
   subtitle: "#FFFFFF",
   body: "#FFFFFF"
-};
-
-var spacing = {
-  small: 4,
-  medium: 8,
-  large: 16
 };
 
 export {
