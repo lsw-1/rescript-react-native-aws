@@ -38,7 +38,7 @@ let styles = {
       ~paddingHorizontal=spacing["l"]->dp,
       (),
     ),
-    "containerCenter": style(~flex=1., ~alignItems=#center, ~justifyContent=#center, ()),
+    "center": style(~alignItems=#center, ~justifyContent=#center, ()),
     "title": style(~fontSize=32., ~color=colors.title, ~fontWeight=#_800, ()),
     "subtitle": style(~fontSize=24., ~color=colors.title, ~fontWeight=#_500, ()),
     "body": style(~fontSize=14., ~color=colors.title, ~fontWeight=#_500, ()),

@@ -1,1 +1,0 @@
-src/screens/WelcomeScreen.cmj :  src/components/MainButton.cmj src/components/MainButton.cmi src/RootContext.cmj src/RootContext.cmi src/SharedStyles.cmj src/SharedStyles.cmi src/components/Spacer.cmj src/components/Spacer.cmi

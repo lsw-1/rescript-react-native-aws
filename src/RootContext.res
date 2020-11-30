@@ -4,7 +4,7 @@ type state = {authorized: bool, darkMode: bool, setAuthorize: bool => unit}
 let initState = {
   authorized: false,
   darkMode: false,
-  setAuthorize: val => (),
+  setAuthorize: _ => (),
 }
 
 let reducer = (state, action) =>

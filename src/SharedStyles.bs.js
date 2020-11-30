@@ -16,9 +16,8 @@ var styles = ReactNative.StyleSheet.create({
         flex: 1,
         paddingHorizontal: spacing.l
       },
-      containerCenter: {
+      center: {
         alignItems: "center",
-        flex: 1,
         justifyContent: "center"
       },
       title: {
