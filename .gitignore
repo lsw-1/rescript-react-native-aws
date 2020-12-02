@@ -5,8 +5,8 @@ Pull requests
 Issues
 Marketplace
 Explore
- 
-@ludwigSW 
+
+@ludwigSW
 MoOx
 /
 LifeTime
@@ -23,10 +23,10 @@ LifeTime/.gitignore
 @MoOx
 MoOx Update .gitignore
 Latest commit 7d761f5 on 3 Aug
- History
- 1 contributor
+History
+1 contributor
 113 lines (91 sloc)  1.44 KB
-  
+
 ## React Native
 
 # OSX
@@ -152,3 +152,19 @@ API
 Training
 Blog
 About
+
+#amplify
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/mock-data
+amplify/backend/amplify-meta.json
+amplify/backend/awscloudformation
+build/
+dist/
+node_modules/
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+amplify-build-config.json
+amplify-gradle-config.json
+amplifytools.xcconfig
