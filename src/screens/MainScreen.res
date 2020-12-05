@@ -24,6 +24,8 @@ let styles = {
 let make = (~navigation as _, ~route as _) => {
   let query = GetUser.use({id: "e5ca065a-dc7b-4a49-a0cb-eb0a6aa1736d"})
 
+  Js.log(query.error)
+
   switch query {
   | {loading: true} => <LoadingScreen />
   | {data: Some({getUser})} =>
@@ -46,6 +48,6 @@ let make = (~navigation as _, ~route as _) => {
         </Text>
       </View>
     </Expo.LinearGradient>
-  | {loading: false, data: None} => "Error"->React.string
+  | {loading: false, data: None} => <LoadingScreen />
   }
 }

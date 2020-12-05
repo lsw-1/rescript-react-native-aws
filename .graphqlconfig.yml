@@ -1,6 +1,6 @@
 projects:
   Portfolio:
-    schemaPath: graphql/graphql_schema.json
+    schemaPath: graphql_schema.json
     includes:
       - graphql/**/*.js
     excludes:

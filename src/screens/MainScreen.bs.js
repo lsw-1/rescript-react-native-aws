@@ -142,12 +142,13 @@ function MainScreen(Props) {
           id: "e5ca065a-dc7b-4a49-a0cb-eb0a6aa1736d"
         }
       ]);
+  console.log(query.error);
   var match = query.data;
   if (query.loading) {
     return React.createElement(LoadingScreen.make, {});
   }
   if (match === undefined) {
-    return "Error";
+    return React.createElement(LoadingScreen.make, {});
   }
   var getUser = match.getUser;
   var tmp;

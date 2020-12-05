@@ -5,10 +5,6 @@ module Navigation = {
   let make = () => {
     let {authorized} = React.useContext(RootContext.context)
 
-    React.useEffect0(() => {
-      Js.Console.log("Test")
-      Some(() => {()})
-    })
     <ReactNavigation.Native.NavigationContainer>
       <RootStack.Navigator headerMode=#none>
         {if authorized {

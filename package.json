@@ -17,7 +17,8 @@
     "re:build": "bsb -clean-world -make-world",
     "re:watch": "bsb -clean-world -make-world -w",
     "re:clean": "bsb -clean-world",
-    "migrate": "node_modules/.bin/bsc -format"
+    "migrate": "node_modules/.bin/bsc -format",
+    "clean": "watchman watch-del-all && rm -rf ./node_modules && yarn && rm -rf /tmp/metro-*"
   },
   "dependencies": {
     "@apollo/client": "^3.3.4",
@@ -26,6 +27,7 @@
     "@react-navigation/stack": "^5.11.1",
     "expo": "~39.0.2",
     "expo-status-bar": "~1.0.2",
+    "graphql": "^15.4.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.2.tar.gz",
