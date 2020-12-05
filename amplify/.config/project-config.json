@@ -1,11 +1,11 @@
 {
-  "projectName": "portfolio",
+  "projectName": "rnrml1",
   "version": "3.0",
   "frontend": "javascript",
   "javascript": {
     "framework": "react-native",
     "config": {
-      "SourceDir": "/",
+      "SourceDir": "src",
       "DistributionDir": "/",
       "BuildCommand": "npm run-script build",
       "StartCommand": "npm run-script start"

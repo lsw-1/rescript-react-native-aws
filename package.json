@@ -20,6 +20,7 @@
     "migrate": "node_modules/.bin/bsc -format"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.4",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.8.2",
     "@react-navigation/stack": "^5.11.1",
@@ -33,6 +34,7 @@
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
     "react-native-web": "~0.13.12",
+    "reason-apollo-client": "^1.0.0-beta.1",
     "reason-expo": "https://gitpkg.now.sh/mlventures/reason-expo/packages/reason-expo?b4833d3",
     "reason-react": "^0.9.1",
     "reason-react-native": "0.63.2",
@@ -40,6 +42,7 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@reasonml-community/graphql-ppx": "^1.0.1",
     "bs-platform": "^8.3.3"
   },
   "private": true

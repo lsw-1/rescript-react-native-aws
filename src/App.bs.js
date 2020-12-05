@@ -2,17 +2,22 @@
 
 import * as Root from "./Root.bs.js";
 import * as React from "react";
+import * as Client from "./Client.bs.js";
 import * as RootContext from "./RootContext.bs.js";
 import * as SharedStyles from "./SharedStyles.bs.js";
 import * as ReactNative from "react-native";
+import * as Client$1 from "@apollo/client";
 
 function App(Props) {
   var value = RootContext.useAppContext(undefined);
-  return React.createElement(ReactNative.SafeAreaView, {
-              style: SharedStyles.styles.container,
-              children: React.createElement(RootContext.make, RootContext.makeProps(value, null, undefined), React.createElement(ReactNative.StatusBar, {
-                        barStyle: "light-content"
-                      }), React.createElement(Root.Navigation.make, {}))
+  return React.createElement(Client$1.ApolloProvider, {
+              client: Client.instance,
+              children: React.createElement(ReactNative.SafeAreaView, {
+                    style: SharedStyles.styles.container,
+                    children: React.createElement(RootContext.make, RootContext.makeProps(value, null, undefined), React.createElement(ReactNative.StatusBar, {
+                              barStyle: "light-content"
+                            }), React.createElement(Root.Navigation.make, {}))
+                  })
             });
 }
 
