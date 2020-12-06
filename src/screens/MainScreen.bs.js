@@ -23,19 +23,12 @@ var query = (require("@apollo/client").gql`
 
 function parse(value) {
   var value$1 = value.getUser;
-  var tmp;
-  if (value$1 == null) {
-    tmp = undefined;
-  } else {
-    var value$2 = value$1.title;
-    tmp = {
-      __typename: value$1.__typename,
-      id: value$1.id,
-      title: !(value$2 == null) ? value$2 : undefined
-    };
-  }
   return {
-          getUser: tmp
+          getUser: !(value$1 == null) ? ({
+                __typename: value$1.__typename,
+                id: value$1.id,
+                title: value$1.title
+              }) : undefined
         };
 }
 
@@ -44,13 +37,12 @@ function serialize(value) {
   var getUser;
   if (value$1 !== undefined) {
     var value$2 = value$1.title;
-    var title = value$2 !== undefined ? value$2 : null;
     var value$3 = value$1.id;
     var value$4 = value$1.__typename;
     getUser = {
       __typename: value$4,
       id: value$3,
-      title: title
+      title: value$2
     };
   } else {
     getUser = null;
@@ -142,7 +134,6 @@ function MainScreen(Props) {
           id: "e5ca065a-dc7b-4a49-a0cb-eb0a6aa1736d"
         }
       ]);
-  console.log(query.error);
   var match = query.data;
   if (query.loading) {
     return React.createElement(LoadingScreen.make, {});
@@ -151,13 +142,6 @@ function MainScreen(Props) {
     return React.createElement(LoadingScreen.make, {});
   }
   var getUser = match.getUser;
-  var tmp;
-  if (getUser !== undefined) {
-    var t = getUser.title;
-    tmp = t !== undefined ? t : "";
-  } else {
-    tmp = "";
-  }
   return React.createElement(ExpoLinearGradient.LinearGradient, {
               colors: [
                 SharedStyles.colors.main,
@@ -184,7 +168,7 @@ function MainScreen(Props) {
                         }
                       }), React.createElement(ReactNative.Text, {
                         style: SharedStyles.styles.title,
-                        children: tmp
+                        children: getUser !== undefined ? getUser.title : ""
                       }))
             });
 }
