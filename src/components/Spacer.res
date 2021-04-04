@@ -14,6 +14,7 @@ let make = (~size) => {
     | Large => style(~paddingTop=SharedStyles.spacing["l"]->dp, ())
     | XLarge => style(~paddingTop=SharedStyles.spacing["xl"]->dp, ())
     | XXLarge => style(~paddingTop=SharedStyles.spacing["xxl"]->dp, ())
+    | Custom(size) => style(~paddingTop=size->dp, ())
     }
   }
 

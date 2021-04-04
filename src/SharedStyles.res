@@ -14,13 +14,13 @@ let colors = {
   main: "#E83B8E",
   secondary: "#F6FF00",
   tertiary: "#7F4DEA",
-  bg: "#242533",
+  bg: "#1A1D2B",
   title: "#FFFFFF",
   subtitle: "#FFFFFF",
   body: "#FFFFFF",
 }
 
-type sizing = Small | Medium | Large | XLarge | XXLarge
+type sizing = Small | Medium | Large | XLarge | XXLarge | Custom(float)
 let spacing = {
   "s": 4.,
   "m": 8.,

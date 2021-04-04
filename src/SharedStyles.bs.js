@@ -12,7 +12,7 @@ var spacing = {
 
 var styles = ReactNative.StyleSheet.create({
       container: {
-        backgroundColor: "#242533",
+        backgroundColor: "#1A1D2B",
         flex: 1,
         paddingHorizontal: spacing.l
       },
@@ -41,7 +41,7 @@ var colors = {
   main: "#E83B8E",
   secondary: "#F6FF00",
   tertiary: "#7F4DEA",
-  bg: "#242533",
+  bg: "#1A1D2B",
   title: "#FFFFFF",
   subtitle: "#FFFFFF",
   body: "#FFFFFF"

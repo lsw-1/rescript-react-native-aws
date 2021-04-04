@@ -2,8 +2,6 @@ open ReactNative
 
 @react.component
 let make = (~navigation as _, ~route as _) => {
-  let {setAuthorize} = React.useContext(RootContext.context)
-
   <View style={SharedStyles.styles["container"]}>
     <Spacer size={Spacer.Size(SharedStyles.XXLarge)} />
     <Spacer size={Spacer.Size(SharedStyles.XXLarge)} />
@@ -11,14 +9,7 @@ let make = (~navigation as _, ~route as _) => {
     <Spacer size={Spacer.Size(SharedStyles.XXLarge)} />
     <Spacer size={Spacer.Size(SharedStyles.XXLarge)} />
     <Spacer size={Spacer.Size(SharedStyles.XXLarge)} />
-    <Svg.Blob />
     <Spacer size={Spacer.Auto} />
-    <MainButton
-      text="Log in with Apple ID"
-      onPress={_ => {
-        setAuthorize(true)
-      }}
-    />
     <Spacer size={Spacer.Size(SharedStyles.XXLarge)} />
   </View>
 }

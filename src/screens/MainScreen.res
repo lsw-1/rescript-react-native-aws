@@ -1,15 +1,14 @@
 open ReactNative
+open Belt.Option
 
-module GetUser = %graphql(
-  `
+module GetUser = %graphql(`
     query GetUser($id: ID!) {
       getUser(id: $id) {
       id
       title
     }
   }
-  `
-)
+  `)
 
 let styles = {
   open Style
@@ -17,6 +16,16 @@ let styles = {
     "gradient": style(~flex=1., ()),
     "container": style(),
     "text": style(~fontSize=22., ~color="#eee", ~fontWeight=#_500, ()),
+    "userCard": style(
+      ~width=100.->pct,
+      ~backgroundColor="#ccc",
+      ~height=140.->dp,
+      ~borderRadius=8.,
+      ~alignItems=#center,
+      ~padding=12.->dp,
+      ~flexDirection=#row,
+      (),
+    ),
   })
 }
 
@@ -34,12 +43,9 @@ let make = (~navigation as _, ~route as _) => {
       style={styles["gradient"]}>
       <View style={StyleSheet.flatten([SharedStyles.styles["container"], styles["container"]])}>
         <Spacer size={Spacer.Size(SharedStyles.Large)} />
-        <Text style={SharedStyles.styles["title"]}>
-          {switch getUser {
-          | Some(u) => u.title->React.string
-          | None => ""->React.string
-          }}
-        </Text>
+        <Text style={SharedStyles.styles["title"]}> {"Welcome in"->React.string} </Text>
+        <Spacer size={Spacer.Size(SharedStyles.Large)} />
+        <Card title={getUser->mapWithDefault("", user => user.title)} />
       </View>
     </Expo.LinearGradient>
   | {loading: false, data: None} => <LoadingScreen />
