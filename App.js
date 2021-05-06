@@ -1,1 +1,1 @@
-export { make as default } from "./src/App.bs.js";
+export { make as default } from "./src/Root.bs.js";

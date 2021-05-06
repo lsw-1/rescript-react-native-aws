@@ -1,7 +1,7 @@
 let graphqlEndpoint = "https://drzwe22nyvdg7d7lls6lycbnze.appsync-api.eu-central-1.amazonaws.com/graphql"
 
 let headers = {
-  "x-api-key": "da2-cjswqysas5cnrcdy63jtngphv4",
+  "x-api-key": "da2-whcjkahcovbyxgafmd2ie6jrvy	",
 }
 
 let httpLink = ApolloClient.Link.HttpLink.make(

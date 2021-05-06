@@ -11,9 +11,9 @@ module Tabs = {
   @react.component
   let make = (~navigation as _, ~route as _) => {
     <Navigator initialRouteName="feed">
-      <Screen name="feed" component=MainScreen.make />
-      <Screen name="friends" component=WelcomeScreen.make />
-      <Screen name="budget" component=WelcomeScreen.make />
+      <Screen name="home" component=HomeScreen.make />
+      <Screen name="friends" component=LoginScreen.make />
+      <Screen name="settings" component=LoginScreen.make />
     </Navigator>
   }
 }
@@ -55,7 +55,7 @@ module RootStack = {
           <Screen
             options={props => options(~headerShown=false, ())}
             name="unauthorized"
-            component=WelcomeScreen.make
+            component=LoginScreen.make
           />
         }}
       </Navigator>

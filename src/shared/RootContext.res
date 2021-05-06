@@ -7,9 +7,9 @@ let initState = {
   setAuthorize: _ => (),
 }
 
-let reducer = (state, action) =>
-  switch action {
-  | SetDarkMode(b) => {...state, darkMode: b}
+let reducer = (state, a) =>
+  switch a {
+  | SetDarkMode(dm) => {...state, darkMode: dm}
   | SetAuthorized(a) => {...state, authorized: a}
   }
 

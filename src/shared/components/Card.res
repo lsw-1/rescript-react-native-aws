@@ -7,9 +7,9 @@ let styles = {
     "container": style(),
     "text": style(~fontSize=22., ~color="#eee", ~fontWeight=#_500, ()),
     "userCard": style(
-      ~width=100.->pct,
-      ~backgroundColor="#ccc",
-      ~height=140.->dp,
+      ~alignSelf=#stretch,
+      ~backgroundColor=SharedStyles.colors.tertiary,
+      ~height=84.->dp,
       ~borderRadius=8.,
       ~alignItems=#center,
       ~padding=12.->dp,

@@ -18,10 +18,18 @@ S /Users/lsw/dev/rn-rml-1/node_modules/reason-react/lib/ocaml
 B /Users/lsw/dev/rn-rml-1/node_modules/reason-react/lib/ocaml
 S src
 B lib/bs/src
-S src/assets
-B lib/bs/src/assets
-S src/components
-B lib/bs/src/components
-S src/screens
-B lib/bs/src/screens
+S src/login
+B lib/bs/src/login
+S src/shared
+B lib/bs/src/shared
+S src/shared/assets
+B lib/bs/src/shared/assets
+S src/shared/components
+B lib/bs/src/shared/components
+S src/shared/screens
+B lib/bs/src/shared/screens
+S src/home
+B lib/bs/src/home
+S src/settings
+B lib/bs/src/settings
 ####BSB GENERATED: NO EDIT}

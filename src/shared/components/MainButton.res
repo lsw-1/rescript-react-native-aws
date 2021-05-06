@@ -5,8 +5,8 @@ let styles = {
   StyleSheet.create({
     "container": style(
       ~borderRadius=8.,
-      ~width=100.->pct,
-      ~height=66.->dp,
+      ~alignSelf=#stretch,
+      ~height=56.->dp,
       ~backgroundColor=SharedStyles.colors.main,
       ~justifyContent=#center,
       ~alignItems=#center,
